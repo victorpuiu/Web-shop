@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/shopping.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+    <script src="/static/js/main.js" defer></script>
+</head>
+<body>
+<div class="CartContainer">
+    <div class="Header">
+        <h3 class="Heading">Shopping Cart</h3>
+<!--        <h5 class="Action">Remove all</h5>-->
+    </div>
+
+    <div class="Cart-Items" th:each="prod,iterStat : ${products}">
+
+        <div class="image-box">
+            <img th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" style=height:120px>
+        </div>
+        <div class="about">
+            <h1 class="title" th:text="${prod.name}">Product name</h1>
+            <h3 class="subtitle" th:text="${prod.description}">Description</h3>
+        </div>
+        <div class="prices">
+            <div class="amount" th:text="${prod.getPrice()}">$2.99</div>
+            <!--            <div class="save"><u>Save for later</u></div>-->
+            <div class="remove" th:attr="id=${prod.getId()}"><u>Remove</u></div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="checkout">
+        <div class="total">
+            <div>
+                <div class="Subtotal">Sub-Total</div>
+                <div class="items" th:text="${products.size()} + ' items'">2 items</div>
+            </div>
+            <div class="total-amount" th:text="${price}">$6.18</div>
+        </div>
+        <form>
+            <button class="button" type="submit" formaction="/checkout" formmethod="get">Checkout</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

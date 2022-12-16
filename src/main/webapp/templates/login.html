@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="author" content="Codecool"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/checkout.css">
+</head>
+<body>
+
+<div class="row" id="login" style="display: flex">
+    <div class="container" style="width: 25rem">
+        <form action="/login" method="post">
+            <div class="row">
+                <div class="col-50">
+                    <h3>Login</h3>
+                    <label for="email-field"><i class="fa fa-envelope"></i> Email</label>
+                    <input type="email" autocomplete="off" id="email-field" name="email" placeholder="john@example.com" required>
+                    <label for="pw-field"><i class="fa fa-address-card-o"></i> Password</label>
+                    <input type="password" autocomplete="off" id="pw-field" name="pw" required>
+                </div>
+            </div>
+            <button class="button" type="submit" id="login-button">Login</button>
+        </form>
+        <a href="/"><button class="button" id="main-page-button">Main Page</button></a>
+    </div>
+</div>
+<div th:replace="footer.html :: copy"></div>
+</body>
+</html>

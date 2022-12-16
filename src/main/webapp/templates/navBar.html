@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div id="nav-container" th:fragment="copy">
+    <nav>
+        <div id="select-category" class="menu">
+            <a class="category" th:each="cat : ${categories}"
+            th:attr="href='/' + ${cat.name.toLowerCase()}, id=${cat.name.toLowerCase()}" th:text="${cat.name}">Category name</a>
+        </div>
+        <div>
+            <a th:if="${user}" class="btn btn-success" href="/logout">Sign Out</a>
+            <a th:unless="${user}"  class="btn btn-success" href="/registration">Sign Up</a>
+            <a th:unless="${user}" class="btn btn-success" href="/login">Sign In</a>
+            <a th:if="${user}" class="btn btn-success" href="/cart">&#128722;</a></div>
+    </nav>
+    <div id="welcome"><p th:if="${user}" th:text="'Welcome ' + ${user}"></p></div>
+</div>
+
+</body>
+</html>
