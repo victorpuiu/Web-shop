@@ -82,3 +82,4 @@ a shopping cart, then check out and make payments.
 - <i class="far fa-exclamation"></i> [Thymeleaf standard dialect](https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html)
 - <i class="far fa-book-open"></i> [Thymeleaf introductions](https://www.thymeleaf.org/documentation.html#introductions)
 
+![Screenshot.png](resources/Screenshot.png)
